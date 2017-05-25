@@ -5,7 +5,7 @@ import (
 "fmt"
 "flag"
 )
-type  Options struct {
+type Options struct {
   Logfile string
   Loglevel string
   Concurrency int
@@ -19,13 +19,13 @@ var Timeout int
 */
 func Flagoperation(){
 
-  flag.StringVar(&Options.Logfile,"logfile","default.log","Log filename to write")
+  flag.StringVar(Options.Logfile,"logfile","default.log","Log filename to write")
 
-  flag.StringVar(&Options.Loglevel,"loglevel","INFO","Log level")
+  flag.StringVar(Options.Loglevel,"loglevel","INFO","Log level")
 
-  flag.IntVar(&Options.Concurrency,"concurrency",2,"Number of threads")
+  flag.IntVar(Options.Concurrency,"concurrency",2,"Number of threads")
 
-  flag.IntVar(&Options.Timeout,"timeout",2000,"Default timeout for any operations")
+  flag.IntVar(Options.Timeout,"timeout",2000,"Default timeout for any operations")
   fmt.Printf("Done\n")
   flag.Parse()
 }
